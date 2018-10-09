@@ -15,6 +15,25 @@ output:
 
 # Visualización básica en R
 
+R Contiene un motor de visualizaciones integrado basado en el paquete *graphics* que suele ser útil al momento de explorar datasets rapidamente.
 
-# Paquetes necesarios
-- ggplot2
+---
+
+# Histogramas
+
+```{r chicks, fig.height=4, dev='svg'}
+data(ChickWeight)
+hist(ChickWeight$weight)
+```
+
+---
+
+# Plots
+
+```{r plotc, fig.height=4, dev='svg'}
+
+plot(chicks,, pch = 19, col = "darkgray", las = 1)
+
+
+```
+

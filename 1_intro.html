@@ -73,7 +73,7 @@ class: center, middle, inverse, title-slide
 # ¿Que puedo hacer con R?
 
 - Estadística
-- Graficos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
+- Grafácos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
 - Análisis geoespacial (sf, sp, leaflet, mapdeck)
 - Presentaciones en HTML o PDF (xarigan y rmarkdown)
 - Informes, papers y libros (rmarkdown, radix y bookdown)
@@ -109,7 +109,8 @@ class: center
 
 - `#` representa un comentario dentro del script
 - `;` separa comandos (rara vez usado)
-- variables no se declaran antes de usarse y pueden ser utilizadas en funciones
+- vavalores perdidos como `NA`
+- riables no se declaran antes de usarse y pueden ser utilizadas en funciones
 - formas de asignar valores a variables
   - `a &lt;- b`
   - `b -&gt; a`
@@ -473,6 +474,58 @@ subset(z, y == "a")
 
 ---
 
+# Funciones adicionales
+
+.pull-left[
+
+```r
+summary(z)
+```
+
+```
+##        x       y    
+##  Min.   :1.0   a:1  
+##  1st Qu.:1.5   b:1  
+##  Median :2.0   c:1  
+##  Mean   :2.0        
+##  3rd Qu.:2.5        
+##  Max.   :3.0
+```
+
+```r
+str(z)
+```
+
+```
+## 'data.frame':	3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: Factor w/ 3 levels "a","b","c": 1 2 3
+```
+]
+
+.pull-right[
+
+```r
+head(z, 1)
+```
+
+```
+##   x y
+## 1 1 a
+```
+
+```r
+tail(z, 1)
+```
+
+```
+##   x y
+## 3 3 c
+```
+]
+
+--
+
 # Archivos CSV (Comma separated values)
 
 Los archivos CSV o TSV son bases de datos que se separan sus columnas por medio de comas, punto y comas o cualquier otro caracter. 
@@ -584,6 +637,33 @@ read_excel("db/Libro1.xlsx", sheet = 1, range = "E6:G9")
 
 ```
 write_excel(dataframe, "db/Libro1.xlsx")
+```
+]
+
+---
+
+# Archivos STATA y SPSS
+
+Los archivos de estas aplicaciones estadísticas son manejados por dos paquetes *foreign* y *haven*, sin embargo, el primero fue ampliamente superado en funcionalidad.
+
+.pull-left[
+
+### Lectura
+
+```
+library(haven)
+read_sav("db/spss.sav")
+read_dta("db/stata.dta")
+```
+]
+
+.pull-right[
+
+### Escritura
+
+```
+write_sav(data, "db/spss.sav")
+write_dta(data, "db/stata.dta")
 ```
 ]
     </textarea>

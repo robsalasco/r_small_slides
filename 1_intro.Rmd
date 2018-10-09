@@ -70,7 +70,7 @@ knitr::include_graphics("http://r4ds.had.co.nz/cover.png")
 # ¿Que puedo hacer con R?
 
 - Estadística
-- Graficos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
+- Grafácos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
 - Análisis geoespacial (sf, sp, leaflet, mapdeck)
 - Presentaciones en HTML o PDF (xarigan y rmarkdown)
 - Informes, papers y libros (rmarkdown, radix y bookdown)
@@ -348,6 +348,25 @@ subset(z, y == "a")
 
 ---
 
+# Funciones adicionales
+
+.pull-left[
+```{r}
+summary(z)
+str(z)
+```
+]
+
+.pull-right[
+```{r}
+head(z, 1)
+tail(z, 1)
+
+```
+]
+
+--
+
 # Archivos CSV (Comma separated values)
 
 Los archivos CSV o TSV son bases de datos que se separan sus columnas por medio de comas, punto y comas o cualquier otro caracter. 
@@ -442,5 +461,32 @@ read_excel("db/Libro1.xlsx", sheet = 1, range = "E6:G9")
 
 ```
 write_excel(dataframe, "db/Libro1.xlsx")
+```
+]
+
+---
+
+# Archivos STATA y SPSS
+
+Los archivos de estas aplicaciones estadísticas son manejados por dos paquetes *foreign* y *haven*, sin embargo, el primero fue ampliamente superado en funcionalidad.
+
+.pull-left[
+
+### Lectura
+
+```
+library(haven)
+read_sav("db/spss.sav")
+read_dta("db/stata.dta")
+```
+]
+
+.pull-right[
+
+### Escritura
+
+```
+write_sav(data, "db/spss.sav")
+write_dta(data, "db/stata.dta")
 ```
 ]
