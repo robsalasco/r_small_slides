@@ -42,7 +42,6 @@ options(htmltools.dir.version = FALSE)
 - Sintaxis ilegible e inconsistente<sup>*</sup>
 - Calidad cuestionable de algunos paquetes
 - R es *single threaded* lo que dificulta escalamiento en datasets grandes y el paralelismo en operaciones aritméticas<sup>*</sup>
-- Abundancia de hacks
 - Necesidad de cargar los dataset completos en memoria
 ]
 
@@ -68,13 +67,39 @@ knitr::include_graphics("http://r4ds.had.co.nz/cover.png")
 
 ---
 
+# ¿Que puedo hacer con R?
+
+- Estadística
+- Graficos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
+- Análisis geoespacial (sf, sp, leaflet, mapdeck)
+- Presentaciones en HTML o PDF (xarigan y rmarkdown)
+- Informes, papers y libros (rmarkdown, radix y bookdown)
+- Sitios web (blogdown)
+- y mucho más!
+---
+
 class: center
 
 # RStudio
 
 ```{r cache=F, echo=F, out.width = "800px", fig.cap="Fuente: http://www.7wdata.be/wp-content/uploads/2016/11/a-complete-tutorial-to-learn-data-science-in-r-from-scratch.png"}
+
 knitr::include_graphics("http://www.7wdata.be/wp-content/uploads/2016/11/a-complete-tutorial-to-learn-data-science-in-r-from-scratch.png")
+
 ``` 
+
+---
+
+# Buscando ayuda
+
+- `help(mean)` o `?`
+- `apropos("mean")`
+- `example(mean)`
+- RStudio help
+- Google usando *[R] keyword*
+- stackoverflow (http://stackoverflow.com) <sup>*</sup>
+
+.footnote[[*] Procurar no copiar y pegar]
 
 ---
 
@@ -82,7 +107,8 @@ knitr::include_graphics("http://www.7wdata.be/wp-content/uploads/2016/11/a-compl
 
 - `#` representa un comentario dentro del script
 - `;` separa comandos (rara vez usado)
-- variables no se declaran antes de usarse y pueden ser utilizadas en funciones
+- vavalores perdidos como `NA`
+- riables no se declaran antes de usarse y pueden ser utilizadas en funciones
 - formas de asignar valores a variables
   - `a <- b`
   - `b -> a`
@@ -144,14 +170,18 @@ Concatenación de elementos en un vector de la forma `a <- c(1,2,3,4,5)` o `1:9`
 - `x[x < 0]`
 - `x[x %in% c(1, 2, 5)]`
 
-### Funciones aritméticas
+---
 
-- `max(x)` o `min(x)`
-- `log(x)`, `exp(x)` y `sqrt(x)`
-- `sum(x)`, `mean(x)`, `median(x)` y `quantile(x)`
-- `var(x)`, `sd(x)`
-- `round(x, n)`
-- `cor(x,y)`
+### Funciones aritméticas sobre vectores
+
+- Trigonometría: `sin()`, `cos()`, `tan()`, `acos()`, `asin()` y `atan()`
+- Redondeo: `abs()`, `ceiling()`, `floor()`, `round()`, `sign()`, `signif()`, `sqrt()` y `trunc()`
+- Logaritmos y exponenciales: `exp()`, `log()`, `log10()` y `log2()`
+- Tendencia central: `mean(x)`, `median(x)`, `var(x)`, `sd(x)`
+- Min - Max: `max(x)` o `min(x)`
+- Suma serie: `sum(x)`
+- Correlación: `cor(x,y)`
+
 ---
 
 # Tipos de datos: Matrices

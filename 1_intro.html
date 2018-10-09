@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Introducción a R
 ## 🚙💨 crash course mode
 ### Roberto Salas
-### 18/07/2018 (actualizado: 2018-09-13)
+### 18/07/2018 (actualizado: 2018-10-09)
 
 ---
 
@@ -47,7 +47,6 @@ class: center, middle, inverse, title-slide
 - Sintaxis ilegible e inconsistente&lt;sup&gt;*&lt;/sup&gt;
 - Calidad cuestionable de algunos paquetes
 - R es *single threaded* lo que dificulta escalamiento en datasets grandes y el paralelismo en operaciones aritméticas&lt;sup&gt;*&lt;/sup&gt;
-- Abundancia de hacks
 - Necesidad de cargar los dataset completos en memoria
 ]
 
@@ -71,6 +70,17 @@ class: center, middle, inverse, title-slide
 
 ---
 
+# ¿Que puedo hacer con R?
+
+- Estadística
+- Graficos y visualizaciones (ggplot2, lattice, base R, r2d3, shiny)
+- Análisis geoespacial (sf, sp, leaflet, mapdeck)
+- Presentaciones en HTML o PDF (xarigan y rmarkdown)
+- Informes, papers y libros (rmarkdown, radix y bookdown)
+- Sitios web (blogdown)
+- y mucho más!
+---
+
 class: center
 
 # RStudio
@@ -79,6 +89,19 @@ class: center
 &lt;img src="http://www.7wdata.be/wp-content/uploads/2016/11/a-complete-tutorial-to-learn-data-science-in-r-from-scratch.png" alt="Fuente: http://www.7wdata.be/wp-content/uploads/2016/11/a-complete-tutorial-to-learn-data-science-in-r-from-scratch.png" width="800px" /&gt;
 &lt;p class="caption"&gt;Fuente: http://www.7wdata.be/wp-content/uploads/2016/11/a-complete-tutorial-to-learn-data-science-in-r-from-scratch.png&lt;/p&gt;
 &lt;/div&gt;
+
+---
+
+# Buscando ayuda
+
+- `help(mean)` o `?`
+- `apropos("mean")`
+- `example(mean)`
+- RStudio help
+- Google usando *[R] keyword*
+- stackoverflow (http://stackoverflow.com) &lt;sup&gt;*&lt;/sup&gt;
+
+.footnote[[*] Procurar no copiar y pegar]
 
 ---
 
@@ -148,14 +171,18 @@ Concatenación de elementos en un vector de la forma `a &lt;- c(1,2,3,4,5)` o `1
 - `x[x &lt; 0]`
 - `x[x %in% c(1, 2, 5)]`
 
-### Funciones aritméticas
+---
 
-- `max(x)` o `min(x)`
-- `log(x)`, `exp(x)` y `sqrt(x)`
-- `sum(x)`, `mean(x)`, `median(x)` y `quantile(x)`
-- `var(x)`, `sd(x)`
-- `round(x, n)`
-- `cor(x,y)`
+### Funciones aritméticas sobre vectores
+
+- Trigonometría: `sin()`, `cos()`, `tan()`, `acos()`, `asin()` y `atan()`
+- Redondeo: `abs()`, `ceiling()`, `floor()`, `round()`, `sign()`, `signif()`, `sqrt()` y `trunc()`
+- Logaritmos y exponenciales: `exp()`, `log()`, `log10()` y `log2()`
+- Tendencia central: `mean(x)`, `median(x)`, `var(x)`, `sd(x)`
+- Min - Max: `max(x)` o `min(x)`
+- Suma serie: `sum(x)`
+- Correlación: `cor(x,y)`
+
 ---
 
 # Tipos de datos: Matrices
@@ -545,9 +572,9 @@ read_excel("db/Libro1.xlsx", sheet = 1, range = "E6:G9")
 ## # A tibble: 3 x 3
 ##       a     b     c
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1  1.00  2.00  3.00
-## 2  4.00  5.00  6.00
-## 3  7.00  8.00  9.00
+## 1     1     2     3
+## 2     4     5     6
+## 3     7     8     9
 ```
 ]
 
@@ -599,7 +626,7 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
