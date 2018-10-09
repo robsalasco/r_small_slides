@@ -1,6 +1,0 @@
-library(sf)
-library(dplyr)
-
-direcciones <- st_read("/Users/robsalasco/Downloads/DIRECCIONES-1.gdb", layer = "DIR")
-
-direcciones %>% filter(DIRECCIONESNOM_COMUNA == "PROVIDENCIA" & CALLE=="LA CONCEPCION")

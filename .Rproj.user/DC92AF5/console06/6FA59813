@@ -1,3 +1,0 @@
-The VM 'dinghy' does not exist in docker-machine.
-Run `dinghy create` to create the VM, `dinghy help create` to see available options.
-[?1034h[36mrobsalasco[m@[32magafya:[33;1m~/Dev/uchile/intro_R[m$ [K[36mrobsalasco[m@[32magafya:[33;1m~/Dev/uchile/intro_R[m$ 
