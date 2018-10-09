@@ -390,7 +390,7 @@ read.csv2("db/baseex.csv")
 
 ### Escritura
 
-```
+```{r, eval = FALSE}
 write.csv2(data.frame, "db/baseex.csv")
 ```
 
@@ -409,13 +409,13 @@ Los archivos RDS y RData son formatos nativos de R para el guardado de objetos, 
 
 #### RDS
 
-```
+```{r, eval = FALSE}
 readRDS("db/baseex.rds")
 ```
 
 #### RData
 
-```
+```{r, eval = FALSE}
 load("db/baseex.RData")
 ```
 
@@ -427,13 +427,13 @@ load("db/baseex.RData")
 
 #### RDS
 
-```
+```{r, eval = FALSE}
 saveRDS(data.frame, "db/baseex.rds")
 ```
 
 #### RData
 
-```
+```{r, eval = FALSE}
 save(data.frame, file = "baseex.RData")
 ```
 
@@ -459,7 +459,7 @@ read_excel("db/Libro1.xlsx", sheet = 1, range = "E6:G9")
 
 ### Escritura
 
-```
+```{r, eval = FALSE}
 write_excel(dataframe, "db/Libro1.xlsx")
 ```
 ]
@@ -474,7 +474,7 @@ Los archivos de estas aplicaciones estadísticas son manejados por dos paquetes 
 
 ### Lectura
 
-```
+```{r, eval = FALSE}
 library(haven)
 read_sav("db/spss.sav")
 read_dta("db/stata.dta")
@@ -485,7 +485,7 @@ read_dta("db/stata.dta")
 
 ### Escritura
 
-```
+```{r, eval = FALSE}
 write_sav(data, "db/spss.sav")
 write_dta(data, "db/stata.dta")
 ```
